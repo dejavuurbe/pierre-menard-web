@@ -1,9 +1,16 @@
 {
-  "name": "Nombre del autor",
-  "short_name": "Autor",
-  "start_url": "/",
+  "name": "Pierre Menard — Écrivain",
+  "short_name": "Pierre Menard",
+  "start_url": "/pierre-menard-web/",
+  "scope": "/pierre-menard-web/",
   "display": "standalone",
   "background_color": "#f5f2ec",
   "theme_color": "#f5f2ec",
-  "icons": []
+  "icons": [
+    {
+      "src": "/pierre-menard-web/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
 }

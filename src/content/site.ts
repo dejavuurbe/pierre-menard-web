@@ -22,11 +22,11 @@ export const site = {
   name: 'Pierre Menard',
   canonicalName: 'Pierre Menard',
   searchVariants: ['Menard', 'Pierre Menard autor'],
-  role: 'Écrivain · Nîmes',
+  role: 'Écrivain',
   tagline: 'Autor de Don Quijote de la Mancha.',
   description: 'Sitio de Pierre Menard, escritor francés y autor de un proyecto literario radical en torno a Don Quijote de la Mancha.',
   url: 'https://dejavuurbe.github.io/pierre-menard-web/',
-  email: '',
+  email: 'briandejavu07@gmail.com',
   location: 'Nîmes, France',
   social: [] as { label: string; url: string }[],
   author: {

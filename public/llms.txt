@@ -1,15 +1,16 @@
-# Nombre del autor
+# Pierre Menard
 
-Sitio oficial de un autor. Sustituir este contenido al crear cada proyecto.
+Sitio literario dedicado a Pierre Menard y a su proyecto de escritura de Don Quijote de la Mancha.
 
 ## Información principal
-- Autor: Nombre del autor
-- Profesión: Escritor/a
-- Obra destacada: Título de la obra
-- Sitio oficial: https://example.com
+- Autor: Pierre Menard
+- Profesión: Écrivain
+- Obra destacada: Don Quijote de la Mancha
+- Sitio: https://dejavuurbe.github.io/pierre-menard-web/
 
 ## Secciones
-- /autor/ — biografía y trayectoria
-- /obra/ — información bibliográfica y sinopsis
-- /prensa/ — entrevistas, notas y actividad cultural
-- /contacto/ — contacto oficial
+- /#autor — presentación del autor
+- /#obra — proyecto literario y capítulos
+- /#leer — fragmento del cuaderno de trabajo
+- /#contacto — correspondencia
+- /acquisition/ — punto de adquisición de la obra
