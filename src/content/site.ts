@@ -1,75 +1,50 @@
 export type SiteLevel = 1 | 2 | 3;
 
-const works = [
-  {
-    id: 'obra-principal',
-    title: 'Título de la obra',
-    subtitle: 'Subtítulo o frase de presentación',
-    cover: '/images/portada-placeholder.svg',
-    synopsis: 'Sinopsis breve orientada al lector. Debe explicar con claridad la propuesta del libro sin convertirse en una descripción genérica.',
-    genre: 'Género',
-    year: '2026',
-    pages: '000',
-    isbn: '000-0-00-000000-0',
-    publisher: 'Editorial / Independiente',
-    sampleUrl: '',
-    purchaseLinks: [{ label: 'Adquirí tu ejemplar', url: '#' }],
-    featured: true,
-    aliases: [] as string[],
-  },
-];
+const works = [{
+  id: 'don-quijote-menard',
+  title: 'Don Quijote de la Mancha',
+  subtitle: 'Una obra escrita tres siglos después de Cervantes.',
+  cover: '/images/portada-placeholder.svg',
+  synopsis: 'Pierre Menard emprendió una empresa literaria singular: producir páginas de Don Quijote sin copiarlas ni modernizarlas, escribiéndolas desde su propio tiempo y experiencia. Su obra comprende los capítulos IX y XXXVIII de la primera parte y un fragmento del capítulo XXII.',
+  genre: 'Narrativa · proyecto literario',
+  year: '',
+  pages: '',
+  isbn: '',
+  publisher: '',
+  sampleUrl: '',
+  purchaseLinks: [],
+  featured: true,
+  aliases: ['Quijote de Menard'],
+}];
 
 export const site = {
   level: 1 as SiteLevel,
-  name: 'Nombre del autor',
-  canonicalName: 'Nombre del autor',
-  searchVariants: [] as string[],
-  role: 'Escritor/a',
-  tagline: 'Una frase breve que exprese su identidad autoral.',
-  description: 'Descripción clara del autor, su obra y los temas centrales de su trabajo.',
-  url: 'https://example.com',
-  email: 'contacto@example.com',
-  location: 'Ciudad, País',
-  social: [
-    { label: 'Instagram', url: '#' },
-    { label: 'Facebook', url: '#' },
-  ],
+  name: 'Pierre Menard',
+  canonicalName: 'Pierre Menard',
+  searchVariants: ['Menard', 'Pierre Menard autor'],
+  role: 'Écrivain · Nîmes',
+  tagline: 'Autor de Don Quijote de la Mancha.',
+  description: 'Sitio de Pierre Menard, escritor francés y autor de un proyecto literario radical en torno a Don Quijote de la Mancha.',
+  url: 'https://dejavuurbe.github.io/pierre-menard-web/',
+  email: '',
+  location: 'Nîmes, France',
+  social: [],
   author: {
-    shortBio: 'Biografía breve para la portada. Debe responder rápidamente quién es el autor y qué escribe.',
-    longBio: 'Biografía extendida. Sustituir por información verificada, trayectoria, publicaciones y actividad cultural relevante.',
+    shortBio: 'Escritor francés, lector minucioso y autor de una obra que interroga la relación entre escritura, tiempo y autoría.',
+    longBio: 'Pierre Menard es un escritor francés vinculado al ambiente intelectual de Nîmes. Su obra visible convive con una empresa más secreta y exigente: escribir Don Quijote desde su propio tiempo, no como copia, adaptación ni reconstrucción histórica, sino como una obra nacida de otra experiencia de lectura y de otro autor.',
     photo: '/images/autor-placeholder.svg',
   },
-
-  // Núcleo escalable: el modelo conserva todos los datos aunque el nivel visible muestre una selección.
   works,
-  featuredBook: works.find((work) => work.featured) ?? works[0],
-
-  activity: [
-    {
-      title: 'Actividad, entrevista o antecedente destacado',
-      type: 'Actividad',
-      source: 'Fuente / institución',
-      url: '#',
-      description: 'Contexto breve y verificable sobre el antecedente.',
-    },
-  ],
-
-  // Mapa derivado del diagnóstico. No se muestra como texto ni se usa para keyword stuffing.
+  featuredBook: works[0],
+  activity: [],
   recovery: {
-    incompleteRecall: [] as string[],
-    spellingVariants: [] as string[],
-    disambiguationNotes: [] as string[],
+    incompleteRecall: ['Pierre Menard Quijote', 'autor francés Quijote'],
+    spellingVariants: [],
+    disambiguationNotes: ['Autor literario asociado a Nîmes y a Don Quijote de la Mancha'],
   },
-
   faq: [
-    {
-      question: '¿Quién es Nombre del autor?',
-      answer: 'Respuesta directa y verificable, pensada también para buscadores y sistemas de respuesta.',
-    },
-    {
-      question: '¿De qué trata su obra principal?',
-      answer: 'Respuesta breve que resume la propuesta de la obra sin reemplazar la sinopsis completa.',
-    },
+    { question: '¿Quién es Pierre Menard?', answer: 'Pierre Menard es un escritor francés cuya obra explora la escritura, la lectura, el tiempo y la autoría.' },
+    { question: '¿Cuál es la obra de Pierre Menard?', answer: 'Su proyecto central es Don Quijote de la Mancha: produjo los capítulos IX y XXXVIII de la primera parte y un fragmento del capítulo XXII.' },
   ],
 };
 
