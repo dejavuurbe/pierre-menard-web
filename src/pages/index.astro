@@ -2,66 +2,76 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { site } from '../content/site';
 import { identityGraphSchema, faqSchema } from '../core/schema';
-
-const bookMeta = [
-  ['Género', site.featuredBook.genre],
-  ['Año', site.featuredBook.year],
-  ['Páginas', site.featuredBook.pages],
-  ['ISBN', site.featuredBook.isbn],
-  ['Edición', site.featuredBook.publisher],
-].filter(([, value]) => value);
 ---
-<BaseLayout
-  title={`${site.name} | ${site.role}`}
-  description={site.description}
-  schema={[identityGraphSchema(), faqSchema()]}
->
+<BaseLayout title={`${site.name} | Écrivain`} description={site.description} schema={[identityGraphSchema(), faqSchema()]}>
   <section class="hero section" id="inicio">
     <div class="container hero-grid">
-      <div>
-        <p class="eyebrow">{site.role}</p>
-        <h1>{site.name}</h1>
-        <p class="lead">{site.tagline}</p>
-        <div class="actions"><a class="button secondary" href="#obra">Conocer la obra</a></div>
+      <div class="hero-copy">
+        <p class="eyebrow">Nîmes · France</p>
+        <h1>Pierre<br/>Menard</h1>
+        <p class="kicker">Écrivain</p>
+        <div class="rule"></div>
+        <p class="lead">Autor de <em>Don Quijote de la Mancha</em>.</p>
+        <p class="intro">Una obra escrita tres siglos después de Cervantes.</p>
+        <a class="text-link" href="#obra">Découvrir l'œuvre →</a>
       </div>
-      <img class="portrait" src={site.author.photo} alt={`Retrato de ${site.name}`} width="700" height="820" />
+      <figure class="portrait-frame">
+        <img class="portrait" src={site.author.photo} alt={`Retrato de ${site.name}`} width="700" height="820" />
+        <figcaption>PIERRE MENARD · PORTRAIT</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section author-section" id="autor">
+    <div class="container editorial-grid">
+      <div><p class="folio">I</p><p class="eyebrow">L'Auteur</p><h2>El autor</h2></div>
+      <div><p class="drop lead">{site.author.longBio}</p><p>Su escritura parte de una convicción incómoda: las palabras pueden permanecer idénticas y, sin embargo, convertirse en otra obra cuando cambia quien las escribe y el tiempo desde el que son leídas.</p></div>
     </div>
   </section>
 
   <section class="section book-section" id="obra">
-    <div class="container grid-two">
-      <img class="cover" src={site.featuredBook.cover} alt={`Portada de ${site.featuredBook.title}`} width="520" height="780" />
+    <div class="container book-grid">
+      <figure class="book-photo">
+        <img src={site.featuredBook.cover} alt={`Ejemplar de ${site.featuredBook.title}`} width="900" height="700" />
+        <figcaption>UN EXEMPLAIRE SUR LA TABLE DE TRAVAIL</figcaption>
+      </figure>
       <div>
-        <p class="eyebrow">Obra</p>
+        <p class="folio">II</p><p class="eyebrow">L'Œuvre</p>
         <h2>{site.featuredBook.title}</h2>
-        {site.featuredBook.subtitle && <p class="book-subtitle">{site.featuredBook.subtitle}</p>}
+        <p class="book-subtitle">{site.featuredBook.subtitle}</p>
         <p class="lead">{site.featuredBook.synopsis}</p>
-        {bookMeta.length > 0 && <dl class="book-meta">{bookMeta.map(([label,value]) => <div><dt>{label}</dt><dd>{value}</dd></div>)}</dl>}
-        {site.featuredBook.purchaseLinks?.some((item) => item.url && item.url !== '#') && <div class="purchase">{site.featuredBook.purchaseLinks.filter((item)=>item.url&&item.url!=='#').map((item)=><a class="button" href={item.url} target="_blank" rel="noopener">{item.label}</a>)}</div>}
-        {site.featuredBook.sampleUrl && <div class="sample-link"><a href={site.featuredBook.sampleUrl}>Leer una muestra autorizada</a></div>}
+        <div class="chapters"><span>IX</span><span>XXXVIII</span><span>XXII <small>fragment</small></span></div>
       </div>
     </div>
   </section>
 
-  <section class="section" id="autor">
-    <div class="container bio-grid"><div><p class="eyebrow">Biografía</p><h2>Sobre {site.name}</h2></div><p class="lead">{site.author.longBio}</p></div>
+  <section class="section reading" id="leer">
+    <div class="container reading-inner">
+      <p class="folio">III</p><p class="eyebrow">Lire</p><h2>Una misma frase.<br/>Otra escritura.</h2>
+      <p class="lead">El proyecto de Menard no busca reproducir un libro antiguo. Busca llegar a sus palabras desde una vida distinta. Allí comienza la lectura.</p>
+      <div class="ornament">✦</div>
+      <p class="note">Fragmento de lectura · archivo del autor</p>
+    </div>
+  </section>
+
+  <section class="section correspondence" id="contacto">
+    <div class="container editorial-grid">
+      <div><p class="folio">IV</p><p class="eyebrow">Correspondance</p><h2>Correspondencia</h2></div>
+      <div><p class="lead">Para lectores, editores e instituciones interesados en la obra y en la conversación literaria alrededor de ella.</p><p class="small">Nîmes · France</p></div>
+    </div>
   </section>
 </BaseLayout>
-
 <style>
-  .hero { padding-top: clamp(3rem, 8vw, 8rem); }
-  .hero-grid { display:grid; gap:clamp(2rem,6vw,6rem); align-items:center; }
-  .portrait { width:100%; max-height:680px; object-fit:cover; border-radius:var(--radius); box-shadow:var(--shadow); }
-  .actions { display:flex; gap:.75rem; flex-wrap:wrap; margin-top:2rem; }
-  .book-section { background:var(--color-surface); }
-  .cover { max-width:360px; margin-inline:auto; border-radius:8px; box-shadow:var(--shadow); }
-  .book-subtitle { margin:-.25rem 0 1rem; color:var(--color-muted); font-family:var(--font-display); font-size:1.35rem; }
-  .book-meta { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.7rem 1.2rem; margin:1.35rem 0 0; }
-  .book-meta div { padding-top:.65rem; border-top:1px solid var(--color-border); }
-  .book-meta dt { font-size:.75rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--color-muted); }
-  .book-meta dd { margin:.2rem 0 0; font-weight:600; }
-  .purchase { margin-top:1.5rem; display:flex; gap:.75rem; flex-wrap:wrap; }
-  .sample-link { margin-top:1rem; }
-  .bio-grid { display:grid; gap:clamp(2rem,6vw,5rem); align-items:start; }
-  @media (min-width:850px) { .hero-grid { grid-template-columns:1.2fr .8fr; } .bio-grid { grid-template-columns:.8fr 1.2fr; } }
+.hero{padding-top:clamp(3rem,7vw,7rem);border-bottom:1px solid var(--color-border)}
+.hero-grid{display:grid;gap:clamp(2rem,7vw,7rem);align-items:center}
+h1{text-transform:uppercase;letter-spacing:.025em}.kicker{font-style:italic;font-size:1.2rem;margin:.8rem 0}.rule{width:70px;border-top:2px solid var(--color-accent);margin:2rem 0}
+.intro{font-size:1rem;max-width:38ch}.text-link{display:inline-block;margin-top:1.6rem;color:var(--color-accent);text-transform:uppercase;letter-spacing:.1em;font-size:.78rem;text-decoration:none;border-bottom:1px solid currentColor}
+.portrait-frame,.book-photo{margin:0}.portrait{width:100%;max-height:680px;object-fit:cover;filter:sepia(.18) contrast(.96);border:1px solid var(--color-border);padding:8px;background:#d8ccb7}
+figcaption{margin-top:.65rem;font-size:.65rem;letter-spacing:.13em;color:var(--color-muted)}
+.author-section,.correspondence{background:var(--color-surface)}.editorial-grid,.book-grid{display:grid;gap:clamp(2rem,7vw,6rem);align-items:start}.folio{font-style:italic;color:var(--color-accent);margin:0 0 1rem}
+.drop:first-letter{float:left;font-family:var(--font-display);font-size:4.5rem;line-height:.72;padding:.18rem .5rem 0 0;color:var(--color-accent)}
+.book-section{border-block:1px solid var(--color-border)}.book-photo img{width:100%;max-height:650px;object-fit:cover;border:1px solid var(--color-border);padding:8px;background:#d8ccb7}
+.book-subtitle{font-style:italic;font-size:1.25rem;color:var(--color-muted)}.chapters{display:flex;gap:1.5rem;flex-wrap:wrap;margin-top:2rem;padding-top:1rem;border-top:1px solid var(--color-border);font-family:var(--font-display);font-size:1.5rem}.chapters small{font-size:.65rem;text-transform:uppercase;letter-spacing:.08em}
+.reading{text-align:center}.reading-inner{max-width:800px}.reading .lead{margin-inline:auto}.ornament{color:var(--color-accent);margin:2rem}.note,.small{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--color-muted)}
+@media(min-width:850px){.hero-grid{grid-template-columns:1.05fr .95fr}.editorial-grid{grid-template-columns:.72fr 1.28fr}.book-grid{grid-template-columns:1.05fr .95fr}}
 </style>
