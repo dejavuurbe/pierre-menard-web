@@ -12,7 +12,7 @@ const works = [{
   isbn: '',
   publisher: '',
   sampleUrl: '',
-  purchaseLinks: [],
+  purchaseLinks: [] as { label: string; url: string }[],
   featured: true,
   aliases: ['Quijote de Menard'],
 }];
@@ -28,7 +28,7 @@ export const site = {
   url: 'https://dejavuurbe.github.io/pierre-menard-web/',
   email: '',
   location: 'Nîmes, France',
-  social: [],
+  social: [] as { label: string; url: string }[],
   author: {
     shortBio: 'Escritor francés, lector minucioso y autor de una obra que interroga la relación entre escritura, tiempo y autoría.',
     longBio: 'Pierre Menard es un escritor francés vinculado al ambiente intelectual de Nîmes. Su obra visible convive con una empresa más secreta y exigente: escribir Don Quijote desde su propio tiempo, no como copia, adaptación ni reconstrucción histórica, sino como una obra nacida de otra experiencia de lectura y de otro autor.',
@@ -36,7 +36,7 @@ export const site = {
   },
   works,
   featuredBook: works[0],
-  activity: [],
+  activity: [] as { title: string; type: string; source: string; url: string; description: string }[],
   recovery: {
     incompleteRecall: ['Pierre Menard Quijote', 'autor francés Quijote'],
     spellingVariants: [],
