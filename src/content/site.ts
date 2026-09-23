@@ -4,7 +4,7 @@ const works = [{
   id: 'don-quijote-menard',
   title: 'Don Quijote de la Mancha',
   subtitle: 'Una obra escrita tres siglos después de Cervantes.',
-  cover: '/images/don-quijote-menard.jpg',
+  cover: '/pierre-menard-web/images/don-quijote-menard.jpg',
   synopsis: 'Pierre Menard emprendió una empresa literaria singular: producir páginas de Don Quijote sin copiarlas ni modernizarlas, escribiéndolas desde su propio tiempo y experiencia. Su obra comprende los capítulos IX y XXXVIII de la primera parte y un fragmento del capítulo XXII.',
   genre: 'Narrativa · proyecto literario',
   year: '',
@@ -32,7 +32,7 @@ export const site = {
   author: {
     shortBio: 'Escritor francés, lector minucioso y autor de una obra que interroga la relación entre escritura, tiempo y autoría.',
     longBio: 'Pierre Menard es un escritor francés vinculado al ambiente intelectual de Nîmes. Su obra visible convive con una empresa más secreta y exigente: escribir Don Quijote desde su propio tiempo, no como copia, adaptación ni reconstrucción histórica, sino como una obra nacida de otra experiencia de lectura y de otro autor.',
-    photo: '/images/pierre-menard-retrato.jpg',
+    photo: '/pierre-menard-web/images/pierre-menard-retrato.jpg',
   },
   works,
   featuredBook: works[0],
