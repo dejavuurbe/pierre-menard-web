@@ -1,6 +1,7 @@
 ---
 import { site } from '../content/site';
 const year = new Date().getFullYear();
+const base = import.meta.env.BASE_URL;
 ---
 <footer class="site-footer">
   <div class="container footer-grid">
@@ -10,7 +11,7 @@ const year = new Date().getFullYear();
     </div>
     <div class="links">
       {site.social.map((item) => <a href={item.url}>{item.label}</a>)}
-      <a href={`mailto:${site.email}`}>Correspondance</a>
+      <a href={`${base}correspondencia/`}>Correspondance</a>
       <a class="project-link" href="/pierre-menard-web/proyecto/">Conocer el proyecto</a>
     </div>
   </div>
