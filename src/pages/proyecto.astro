@@ -13,7 +13,10 @@ const contactUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURICom
       <p class="eyebrow">Diseño web para autores</p>
       <h1>Una web también puede contar cómo se lee una obra.</h1>
       <p class="lead">Este sitio es una demostración de un trabajo hecho a medida: comprender la identidad de un autor y convertirla en una presencia digital clara, cuidada y útil.</p>
-      <a class="project-button" href={contactUrl} target="_blank" rel="noopener noreferrer">Conversar sobre tu proyecto</a>
+      <div class="project-actions">
+        <a class="project-button" href={contactUrl} target="_blank" rel="noopener noreferrer">Conversar sobre tu proyecto</a>
+        <a class="project-button project-button-secondary" href="/pierre-menard-web/">Ver la demostración de Menard</a>
+      </div>
     </div>
   </section>
 
@@ -22,7 +25,7 @@ const contactUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURICom
       <div><p class="folio">I</p><p class="eyebrow">El caso Menard</p><h2>Una ficción diseñada desde dentro</h2></div>
       <div>
         <p class="lead">Pierre Menard, personaje de Jorge Luis Borges, permitió construir una presencia de autor completa alrededor de una obra singular.</p>
-        <p>La identidad visual, los textos, las imágenes y el recorrido hacia la librería responden a ese universo. La intención fue que cada decisión pareciera pertenecer a la misma historia y que la experiencia siguiera siendo clara en computadora y en teléfono.</p>
+        <p>La identidad visual, los textos, las imágenes y el recorrido hacia la librería responden a ese universo. En el mundo de Menard no hay correo electrónico ni comercio en línea: la correspondencia adopta la forma de una carta y el libro se adquiere en una librería. La intención fue que cada decisión pareciera pertenecer a la misma historia y que la experiencia siguiera siendo clara en computadora y en teléfono.</p>
         <a class="text-link" href="/pierre-menard-web/">Volver al sitio de Pierre Menard →</a>
       </div>
     </div>
@@ -60,8 +63,11 @@ const contactUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURICom
   .project-copy{max-width:900px}
   h1{max-width:17ch;font-size:clamp(2.6rem,7vw,5.8rem);line-height:1.05}
   .lead{max-width:62ch}
+  .project-actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.2rem;align-items:center}
   .project-button{display:inline-block;margin-top:1.2rem;padding:.85rem 1.2rem;background:var(--color-accent);color:var(--color-accent-contrast);text-decoration:none;border:1px solid var(--color-accent);letter-spacing:.04em}
+  .project-actions .project-button{margin-top:0}
   .project-button:hover,.project-button:focus-visible{background:transparent;color:var(--color-accent)}
+  .project-button-secondary{background:transparent;color:var(--color-accent)}
   .editorial-grid{display:grid;gap:clamp(2rem,7vw,6rem);align-items:start}
   .folio{font-style:italic;color:var(--color-accent);margin:0 0 1rem}
   .text-link{display:inline-block;margin-top:.8rem;color:var(--color-accent);text-underline-offset:.2em}
