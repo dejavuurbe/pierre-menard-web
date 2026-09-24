@@ -11,6 +11,7 @@ const year = new Date().getFullYear();
     <div class="links">
       {site.social.map((item) => <a href={item.url}>{item.label}</a>)}
       <a href={`mailto:${site.email}`}>Correspondance</a>
+      <a class="project-link" href="/pierre-menard-web/proyecto/">Conocer el proyecto</a>
     </div>
   </div>
   <div class="container legal">© {year} {site.name}</div>
@@ -32,6 +33,19 @@ const year = new Date().getFullYear();
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
+    align-items: center;
+  }
+  .project-link {
+    display: inline-block;
+    padding: .55rem .85rem;
+    border: 1px solid var(--color-accent);
+    color: var(--color-accent);
+    text-decoration: none;
+    font-size: .82rem;
+  }
+  .project-link:hover, .project-link:focus-visible {
+    background: var(--color-accent);
+    color: var(--color-accent-contrast);
   }
   .legal {
     margin-top: 2rem;
