@@ -9,7 +9,7 @@
   --font-display: Georgia, 'Times New Roman', serif;
   --font-body: Georgia, 'Times New Roman', serif;
   --max-width:1180px;
-  --header-height:72px;
+  --header-height:76px;
   --section-full:calc(100svh - var(--header-height));
   --section-half:calc(var(--section-full) / 2);
   --section-full-pad-y:clamp(1.8rem,3.2vh,2.8rem);
