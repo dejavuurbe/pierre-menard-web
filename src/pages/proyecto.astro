@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { site } from '../content/site';
+const contactUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(site.email)}&su=${encodeURIComponent('Consulta sobre un sitio web para autores')}`;
 ---
 
 <BaseLayout
@@ -12,7 +13,7 @@ import { site } from '../content/site';
       <p class="eyebrow">Diseño web para autores</p>
       <h1>Una web también puede contar cómo se lee una obra.</h1>
       <p class="lead">Este sitio es una demostración de un trabajo hecho a medida: comprender la identidad de un autor y convertirla en una presencia digital clara, cuidada y útil.</p>
-      <a class="project-button" href={`mailto:${site.email}`}>Conversar sobre tu proyecto</a>
+      <a class="project-button" href={contactUrl} target="_blank" rel="noopener noreferrer">Conversar sobre tu proyecto</a>
     </div>
   </section>
 
@@ -48,7 +49,7 @@ import { site } from '../content/site';
       <p class="eyebrow">Hablemos de tu obra</p>
       <h2>¿Qué presencia digital necesita tu proyecto?</h2>
       <p class="lead">Cuéntame qué escribes y qué te gustaría que tus lectores pudieran encontrar. Podemos empezar con una conversación breve.</p>
-      <a class="project-button" href={`mailto:${site.email}`}>Escribir a Brian</a>
+      <a class="project-button" href={contactUrl} target="_blank" rel="noopener noreferrer">Escribir a Brian</a>
     </div>
   </section>
 </BaseLayout>
