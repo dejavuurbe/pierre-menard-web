@@ -28,6 +28,12 @@ export const site = {
   url: 'https://dejavuurbe.github.io/pierre-menard-web/',
   email: 'briandejavu07@gmail.com',
   location: 'Nîmes, France',
+  footerLine: 'Écrivain · Nîmes, France',
+  credit: {
+    enabled: true,
+    label: 'Diseño y desarrollo web por',
+    url: 'https://dejavuurbe.github.io/pierre-menard-web/proyecto/',
+  },
   social: [] as { label: string; url: string }[],
   author: {
     shortBio: 'Escritor francés, lector minucioso y autor de una obra que interroga la relación entre escritura, tiempo y autoría.',
